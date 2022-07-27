@@ -15,7 +15,7 @@ externalDocs:
 servers:
 # Added by API Auto Mocking Plugin
 - description: SwaggerHub API Auto Mocking
-  url: https://virtserver.swaggerhub.com/HEIMAHEFA/std-21065/1.0.0
+  url: https://virtserver.swaggerhub.com/HEIN'Itsiaro/std21063/1.0.0
 tags:
 - name: Room
 - name: Film
