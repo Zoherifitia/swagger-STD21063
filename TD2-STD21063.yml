@@ -21,6 +21,7 @@ tags:
 - name: Film
 - name: Projection
 - name: categorie
+- name: calendars
 paths:
   /room:
     get:
@@ -289,6 +290,29 @@ paths:
         400:
           description: Error
           content: {}
+  /calendars:
+    get:
+      tags:
+        - "calendars"
+      summary: Get Calendars to this week
+      operationId: getcalendars
+      parameters:
+        - name: week of 
+          in: query
+          schema:
+            type: string
+            format: date
+      responses:
+        200:
+          description: success
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#/components/schemas/calendar'
+        400:
+          description: Error
   /projection:
     get:
       tags:
@@ -555,4 +579,11 @@ components:
       type: object
       allOf:
         - $ref: '#/components/schemas/newcategorie'
+    calendar:
+      properties:
+        week of:
+          type: string
+          format: date
+      allOf:
+        - $ref : '#/components/schemas/Projection'
           
